@@ -5,3 +5,14 @@
 .mainFxmlClass {
 
 }
+
+Button {
+    -fx-background-radius: 0px;
+}
+
+.jfx-button {
+    -fx-background-radius: 0px;
+}
+.current-page-button {
+    -fx-background-color:  #59AADF;
+}
