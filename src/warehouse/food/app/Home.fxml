@@ -9,10 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane prefHeight="657.0" prefWidth="861.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <right>
-      <VBox prefHeight="657.0" prefWidth="126.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="657.0" prefWidth="130.0" BorderPane.alignment="CENTER">
          <children>
             <JFXButton contentDisplay="RIGHT" prefHeight="130.0" prefWidth="130.0" styleClass="current-page-button" stylesheets="@Style.css" text="الرئيسية" textFill="WHITE">
                <font>
