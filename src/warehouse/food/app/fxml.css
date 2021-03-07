@@ -1,0 +1,28 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+.navigation-bar {
+    -fx-background-color: #59AADF;
+}
+
+.navigation-bar-text {
+    -fx-background-radius: 0;
+    -fx-text-fill: #FFFFFF;
+
+}
+.navigation-bar-text:hover {
+    -fx-background-color: #7ABBE5;
+
+}
+.currnet, .currnet:hover {
+    -fx-background-color: #1A2E47;
+}
+
+.logo {
+    -fx-background-radius: 200;
+}
+
