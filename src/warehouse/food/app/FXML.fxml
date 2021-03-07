@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,10 +15,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@fxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <left>
-      <VBox alignment="TOP_CENTER" prefHeight="800.0" prefWidth="280.0" styleClass="navigation-bar" stylesheets="@fxml.css" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="800.0" prefWidth="280.0" styleClass="navigation-bar" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="150.0" prefWidth="280.0">
                <children>
@@ -126,4 +131,48 @@
          </padding>
       </VBox>
    </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="83.0" prefWidth="820.0">
+               <children>
+                  <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Add resource">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="this page is for adding a new resource type to the resources table" />
+               </children>
+            </VBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Item Code" />
+                  <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Item Name" />
+                  <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Item Unit Type" />
+                  <JFXComboBox prefHeight="40.0" prefWidth="160.0" promptText="Item Category" />
+                  <JFXButton graphicTextGap="8.0" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Add " textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" iconName="PLUS" size="22" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <TableView prefHeight="464.0" prefWidth="820.0" styleClass="resource-table">
+              <columns>
+                <TableColumn prefWidth="150.0" text="ID" />
+                  <TableColumn prefWidth="150.0" text="Code" />
+                <TableColumn prefWidth="150.0" text="Name" />
+                  <TableColumn prefWidth="150.0" text="Unit Type" />
+                  <TableColumn prefWidth="150.0" text="Category" />
+              </columns>
+            </TableView>
+         </children>
+         <padding>
+            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+         </padding>
+      </VBox>
+   </center>
 </BorderPane>
