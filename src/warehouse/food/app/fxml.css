@@ -15,7 +15,7 @@
 
 }
 .navigation-bar-text:hover {
-    -fx-background-color: #7ABBE5;
+        -fx-background-color: #7ABBE5;
 
 }
 .currnet, .currnet:hover {
