@@ -1,14 +1,202 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="warehouse.food.app.FXMLDocumentController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@fxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="warehouse.food.app.LoginController">
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="800.0" prefWidth="280.0" styleClass="navigation-bar" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="150.0" prefWidth="280.0">
+               <children>
+                  <AnchorPane prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 150;">
+                     <children>
+                        <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="16.0" layoutY="15.0">
+                           <image>
+                              <Image url="@../../../Asset/WhatsApp_Image_2021-02-23_at_1.20.16_PM-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </HBox>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" text="Home">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="HOME" size="30PX" />
+               </graphic>
+               <styleClass>
+                  <String fx:value="navigation-bar-text" />
+                  <String fx:value="currnet" />
+               </styleClass>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Stock">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="CUBES" size="30PX" />
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Reports">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="PRINT" size="30PX" />
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Calculator">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="CALCULATOR" size="30PX" />
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Menu">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="BARS" size="30PX" />
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Add resources">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="PLUS" size="30PX" />
+               </graphic>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets bottom="40.0" top="40.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane layoutX="6.0" prefHeight="150.0" prefWidth="914.0" style="-fx-background-color: #1a2e47;" styleClass="navigation-bar">
+               <children>
+                  <Label layoutX="38.0" layoutY="54.0" prefHeight="53.0" prefWidth="434.0" text="Login in the system" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <JFXButton layoutX="654.0" layoutY="31.0" prefHeight="44.0" prefWidth="192.0" style="-fx-background-radius: 5em; -fx-background-color: #ffffff;" text="register" textFill="#1a2e47">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="655.0" layoutY="82.0" prefHeight="44.0" prefWidth="192.0" style="-fx-background-radius: 5em; -fx-background-color: #ffffff;" text="About us" textFill="#1a2e47">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children></AnchorPane>
+            <AnchorPane layoutX="358.0" layoutY="51.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: F4F4F4; -fx-background-radius: 150;" stylesheets="@@fxml.css">
+               <children>
+                  <ImageView fitHeight="181.0" fitWidth="189.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Asset/person-male.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="221.0" layoutY="306.0" prefHeight="402.0" prefWidth="485.0" style="-fx-background-color: transparent; -fx-border-color: #59AADF; -fx-border-width: 3px 3px 3px 3px;" styleClass="navigation-bar">
+               <children>
+                  <ImageView fitHeight="98.0" fitWidth="98.0" layoutX="195.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Asset/WhatsApp_Image_2021-02-23_at_1.20.16_PM-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="38.0" layoutY="170.0" text="phone number:" textFill="#1a2e47">
+                     <font>
+                        <Font name="Calibri Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="39.0" layoutY="259.0" text="password:" textFill="#1a2e47">
+                     <font>
+                        <Font name="Calibri Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField focusColor="#4a8cb5" layoutX="247.0" layoutY="169.0" prefHeight="25.0" prefWidth="203.0" promptText="ex:966+" unFocusColor="#1a2e47" />
+                  <JFXPasswordField focusColor="#4a8cb5" layoutX="243.0" layoutY="257.0" prefHeight="25.0" prefWidth="211.0" promptText="******" unFocusColor="#1a2e47" />
+                  <JFXButton layoutX="201.0" layoutY="345.0" prefHeight="44.0" prefWidth="80.0" style="-fx-background-radius: 5em; -fx-background-color: #1a2e47;" text="login" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <Hyperlink layoutX="165.0" layoutY="307.0" text="forgot Your password?" underline="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Hyperlink>
+                  <Label alignment="CENTER" layoutX="101.0" layoutY="131.0" prefHeight="17.0" prefWidth="287.0" textFill="#f40000">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
