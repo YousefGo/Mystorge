@@ -151,7 +151,7 @@
                      </font>
                   </JFXButton>
                </children></AnchorPane>
-            <AnchorPane layoutX="358.0" layoutY="51.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: F4F4F4; -fx-background-radius: 150;" stylesheets="@@fxml.css">
+            <AnchorPane layoutX="358.0" layoutY="51.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F4F4F4; -fx-background-radius: 150;" stylesheets="@@fxml.css">
                <children>
                   <ImageView fitHeight="181.0" fitWidth="189.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true">
                      <image>
