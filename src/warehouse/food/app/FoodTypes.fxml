@@ -37,7 +37,7 @@
                   <Insets bottom="20.0" />
                </VBox.margin>
             </HBox>
-            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" text="Home">
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Home">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -50,10 +50,6 @@
                <graphic>
                   <FontAwesomeIcon fill="WHITE" iconName="HOME" size="30PX" />
                </graphic>
-               <styleClass>
-                  <String fx:value="navigation-bar-text" />
-                  <String fx:value="currnet" />
-               </styleClass>
             </JFXButton>
             <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Stock">
                <font>
@@ -111,7 +107,7 @@
                   <FontAwesomeIcon fill="WHITE" iconName="BARS" size="30PX" />
                </graphic>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Add resources">
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" text="Add resources">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -124,6 +120,10 @@
                <graphic>
                   <FontAwesomeIcon fill="WHITE" iconName="PLUS" size="30PX" />
                </graphic>
+               <styleClass>
+                  <String fx:value="navigation-bar-text" />
+                  <String fx:value="currnet" />
+               </styleClass>
             </JFXButton>
          </children>
          <padding>

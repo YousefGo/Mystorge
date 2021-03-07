@@ -1,77 +1,234 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="warehouse.food.app.HomeController">
-   <top>
-      <HBox prefHeight="85.0" prefWidth="200.0" style="-fx-background-color: #4D4D4D;" BorderPane.alignment="CENTER" />
-   </top>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@fxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <left>
-      <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="130.0" style="-fx-background-color: #676767;" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="800.0" prefWidth="280.0" styleClass="navigation-bar" BorderPane.alignment="CENTER">
          <children>
-            <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #676767;" text="Home" textFill="WHITE">
+            <HBox alignment="CENTER" prefHeight="150.0" prefWidth="280.0">
+               <children>
+                  <AnchorPane prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 150;">
+                     <children>
+                        <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="16.0" layoutY="15.0">
+                           <image>
+                              <Image url="@../../../Asset/WhatsApp_Image_2021-02-23_at_1.20.16_PM-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </HBox>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Home">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
                <graphic>
-                  <ImageView fitHeight="60.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Asset/home.png" />
-                     </image>
-                  </ImageView>
+                  <FontAwesomeIcon fill="WHITE" iconName="HOME" size="30PX" />
                </graphic>
-            </Button>
-            <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #676767;" styleClass="jfx-button" text="Stock" textFill="WHITE">
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Stock">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
                <graphic>
-                  <ImageView fitHeight="60.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Asset/rack.png" />
-                     </image>
-                  </ImageView>
+                  <FontAwesomeIcon fill="WHITE" iconName="CUBES" size="30PX" />
                </graphic>
-            </Button>
-            <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #676767;" text="Reports" textFill="WHITE">
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Reports">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
                <graphic>
-                  <ImageView fitHeight="60.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Asset/profit-report.png" />
-                     </image>
-                  </ImageView>
+                  <FontAwesomeIcon fill="WHITE" iconName="PRINT" size="30PX" />
                </graphic>
-            </Button>
-            <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #676767;" text="Calculator" textFill="WHITE">
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" text="Calculator">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
                <graphic>
-                  <ImageView fitHeight="60.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Asset/calculator.png" />
-                     </image>
-                  </ImageView>
+                  <FontAwesomeIcon fill="WHITE" iconName="CALCULATOR" size="30PX" />
                </graphic>
-            </Button>
-            <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #676767;" text="Menu" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="navigation-bar-text" />
+                  <String fx:value="currnet" />
+               </styleClass>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Menu">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
                <graphic>
-                  <ImageView fitHeight="60.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Asset/menu.png" />
-                     </image>
-                  </ImageView>
+                  <FontAwesomeIcon fill="WHITE" iconName="BARS" size="30PX" />
                </graphic>
-            </Button>
-            <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #676767;" text="Item" textFill="WHITE">
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Add resources">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
                <graphic>
-                  <ImageView fitHeight="60.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Asset/pallet.png" />
-                     </image>
-                  </ImageView>
+                  <FontAwesomeIcon fill="WHITE" iconName="PLUS" size="30PX" />
                </graphic>
-            </Button>
+            </JFXButton>
          </children>
+         <padding>
+            <Insets bottom="40.0" top="40.0" />
+         </padding>
       </VBox>
    </left>
-   <bottom>
-      <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #4D4D4D;" BorderPane.alignment="CENTER" />
-   </bottom>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="83.0" prefWidth="820.0">
+               <children>
+                  <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Calculator">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="this page is for using a meal calculator that caculate the required resources for a meal" />
+               </children>
+            </VBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="People number:" wrappingWidth="137.859375">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <JFXTextField prefHeight="40.0" prefWidth="247.0" promptText="Enter the total number of people" />
+               </children>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="820.0" spacing="20.0">
+                     <children>
+                        <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Resource name:" wrappingWidth="220.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <JFXComboBox prefHeight="31.0" prefWidth="250.0" promptText="Resource name" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="820.0" spacing="20.0">
+                     <children>
+                        <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Consumption Per Person:" wrappingWidth="220.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <JFXTextField prefHeight="40.0" prefWidth="247.0" promptText="Enter the total number of people" text="Consumption per person" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="820.0" spacing="20.0">
+                     <children>
+                        <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Consumption Unit:" wrappingWidth="220.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <JFXTextField prefHeight="40.0" prefWidth="247.0" promptText="Enter the total number of people" text="Consumption unit" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="820.0" spacing="20.0">
+                     <children>
+                        <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount Per Box:" wrappingWidth="220.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <JFXTextField prefHeight="40.0" prefWidth="247.0" promptText="Enter the total number of people" text="Amount per box" />
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                     <children>
+                        <JFXButton graphicTextGap="8.0" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Calculate" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Amount of consumption:" wrappingWidth="264.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </VBox>
+            <TableView prefHeight="294.0" prefWidth="820.0" styleClass="resource-table">
+               <columns>
+                  <TableColumn prefWidth="125.0" text="People number" />
+                  <TableColumn prefWidth="119.0" text="Resource name" />
+                  <TableColumn prefWidth="187.0" text="Consumption Per Person" />
+                  <TableColumn prefWidth="160.0" text="Consumption Unit" />
+                  <TableColumn prefWidth="150.0" text="Amount Per Box" />
+                  <TableColumn prefWidth="75.0" text="total" />
+               </columns>
+            </TableView>
+         </children>
+         <padding>
+            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+         </padding>
+      </VBox>
+   </center>
 </BorderPane>
