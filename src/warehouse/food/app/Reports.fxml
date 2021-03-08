@@ -36,7 +36,7 @@
                   <Insets bottom="20.0" />
                </VBox.margin>
             </HBox>
-            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" text="Home">
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Home">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -49,10 +49,6 @@
                <graphic>
                   <FontAwesomeIcon fill="WHITE" iconName="HOME" size="30PX" />
                </graphic>
-               <styleClass>
-                  <String fx:value="navigation-bar-text" />
-                  <String fx:value="currnet" />
-               </styleClass>
             </JFXButton>
             <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Stock">
                <font>
@@ -68,7 +64,7 @@
                   <FontAwesomeIcon fill="WHITE" iconName="CUBES" size="30PX" />
                </graphic>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Reports">
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" text="Reports">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -81,6 +77,10 @@
                <graphic>
                   <FontAwesomeIcon fill="WHITE" iconName="PRINT" size="30PX" />
                </graphic>
+               <styleClass>
+                  <String fx:value="navigation-bar-text" />
+                  <String fx:value="currnet" />
+               </styleClass>
             </JFXButton>
             <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Calculator">
                <font>

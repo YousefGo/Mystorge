@@ -27,17 +27,9 @@
 }
 
 .resource-table .column-header-background .nested-column-header .table-column, .resource-table .column-header-background .filler {
-        -fx-background-color: #59AADF;
-
-}
-.resource-table > .column-header-background{
-    -fx-background-color: blue;
+    -fx-background-color: #59AADF;
 }
 
 .resource-table .column-header-background .label{
     -fx-text-fill: white;
-}
-
-.table-view .column-header-background{
-    -fx-background-color: linear-gradient(#131313 0%, #424141 100%);
 }

@@ -37,7 +37,7 @@
                   <Insets bottom="20.0" />
                </VBox.margin>
             </HBox>
-            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" text="Home">
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Home">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -50,12 +50,8 @@
                <graphic>
                   <FontAwesomeIcon fill="WHITE" iconName="HOME" size="30PX" />
                </graphic>
-               <styleClass>
-                  <String fx:value="navigation-bar-text" />
-                  <String fx:value="currnet" />
-               </styleClass>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Stock">
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" text="Stock">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -68,6 +64,10 @@
                <graphic>
                   <FontAwesomeIcon fill="WHITE" iconName="CUBES" size="30PX" />
                </graphic>
+               <styleClass>
+                  <String fx:value="navigation-bar-text" />
+                  <String fx:value="currnet" />
+               </styleClass>
             </JFXButton>
             <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Reports">
                <font>
@@ -148,7 +148,7 @@
                <children>
                   <JFXComboBox prefHeight="40.0" prefWidth="160.0" promptText="Name item" />
                   <JFXComboBox prefHeight="40.0" prefWidth="160.0" promptText="Choose Opreation" />
-                  <JFXTextField prefHeight="41.0" prefWidth="135.0" promptText="ADD By Number of box" />
+                  <JFXTextField prefHeight="41.0" prefWidth="172.0" promptText="ADD By Number of box" />
                   <JFXButton graphicTextGap="8.0" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Submit" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="16.0" />
