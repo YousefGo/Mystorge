@@ -5,9 +5,8 @@ It contains the following pages
 
 <h2>Registration</h2>
 <p> Create a new account for the user </p>
-<p align="center">
-  <img src="https://am3pap005files.storage.live.com/y4mK3ulozMcLZ7wLT_Dln6vIQRboWihTjK2W1iF8ZAmJZFBfAnnJeHdr7RXY2E3nmYHUa0ywgG6Y4BoZtyYm-gs8FvlJsuBcWdaQtaPTYxbYHV3n7kGnti88aN5dbJ-HPSUxtgf9AnvtP-4Nwa8MXyPqwBuQ_6e6Zn7i27TPBHFrNzIcetygs_XbEXWd1OlSrVE89B8Ylg1NIvGw4JIOe5J-Q/Sign%20up.png" width="350" alt="sing up">
-</p>
+<img src="https://am3pap005files.storage.live.com/y4mK3ulozMcLZ7wLT_Dln6vIQRboWihTjK2W1iF8ZAmJZFBfAnnJeHdr7RXY2E3nmYHUa0ywgG6Y4BoZtyYm-gs8FvlJsuBcWdaQtaPTYxbYHV3n7kGnti88aN5dbJ-HPSUxtgf9AnvtP-4Nwa8MXyPqwBuQ_6e6Zn7i27TPBHFrNzIcetygs_XbEXWd1OlSrVE89B8Ylg1NIvGw4JIOe5J-Q/Sign%20up.png?psid=1&width=852&height=567" >
+
 <h2> Login</h2>
 <p> System login page </p>
 
