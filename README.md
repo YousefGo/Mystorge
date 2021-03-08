@@ -1,9 +1,10 @@
 # Mystorge Food app 
 the aim of this app to help The owners of subsistence contractors
  
-It contains the following pages : 
+It contains the following pages
 
-#Regestion 
+#Regestion
+ 
 
 #Login
 
