@@ -5,7 +5,9 @@ It contains the following pages
 
 <h2>Registration</h2>
 <p> Create a new account for the user </p>
-
+<p align="center">
+  <img src="https://onedrive.live.com/?authkey=%21AJyIkeG93ltAtAo&cid=57A52EC5FDC45220&id=57A52EC5FDC45220%216183&parId=57A52EC5FDC45220%216175&o=OneUp" width="350" alt="sing up ">
+</p>
 <h2> Login</h2>
 <p> System login page </p>
 
