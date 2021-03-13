@@ -150,6 +150,7 @@
                   <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Item Name" />
                   <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Item Unit Type" />
                   <JFXComboBox prefHeight="40.0" prefWidth="160.0" promptText="Item Category" />
+                  <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Item Unit Type" text="Item uint price" />
                   <JFXButton graphicTextGap="8.0" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Add " textFill="WHITE">
                      <graphic>
                         <FontAwesomeIcon fill="WHITE" iconName="PLUS" size="22" />
@@ -164,9 +165,10 @@
               <columns>
                 <TableColumn prefWidth="150.0" text="ID" />
                   <TableColumn prefWidth="150.0" text="Code" />
-                <TableColumn prefWidth="150.0" text="Name" />
-                  <TableColumn prefWidth="150.0" text="Unit Type" />
-                  <TableColumn prefWidth="150.0" text="Category" />
+                <TableColumn prefWidth="83.0" text="Name" />
+                  <TableColumn prefWidth="142.0" text="Unit Type" />
+                  <TableColumn prefWidth="98.0" text="Unit price" />
+                  <TableColumn prefWidth="277.0" text="Catogray " />
               </columns>
             </TableView>
          </children>

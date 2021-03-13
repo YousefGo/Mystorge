@@ -212,7 +212,7 @@
                               <Insets top="20.0" />
                            </VBox.margin>
                         </Line>
-                        <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Current stock" textAlignment="CENTER" wrappingWidth="145.20361328125">
+                        <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Detaiels" textAlignment="CENTER" wrappingWidth="145.20361328125">
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>
@@ -282,7 +282,7 @@
                               <Insets top="40.0" />
                            </VBox.margin>
                         </Line>
-                        <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock load" textAlignment="CENTER" wrappingWidth="111.20361328125">
+                        <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Stock" textAlignment="CENTER" wrappingWidth="194.20361328125">
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>

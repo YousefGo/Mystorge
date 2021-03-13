@@ -140,7 +140,7 @@
                         <Font name="System Bold" size="30.0" />
                      </font>
                   </Label>
-                  <JFXButton layoutX="654.0" layoutY="31.0" prefHeight="44.0" prefWidth="192.0" style="-fx-background-radius: 5em; -fx-background-color: #ffffff;" text="register" textFill="#1a2e47">
+                  <JFXButton layoutX="654.0" layoutY="31.0" prefHeight="44.0" prefWidth="192.0" style="-fx-background-radius: 5em; -fx-background-color: #ffffff;" text="Register" textFill="#1a2e47">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -167,19 +167,19 @@
                         <Image url="@../../../Asset/WhatsApp_Image_2021-02-23_at_1.20.16_PM-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="38.0" layoutY="170.0" text="phone number:" textFill="#1a2e47">
+                  <Label layoutX="38.0" layoutY="170.0" text="Phone Number:" textFill="#1a2e47">
                      <font>
                         <Font name="Calibri Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="39.0" layoutY="259.0" text="password:" textFill="#1a2e47">
+                  <Label layoutX="39.0" layoutY="259.0" text="Password:" textFill="#1a2e47">
                      <font>
                         <Font name="Calibri Bold" size="24.0" />
                      </font>
                   </Label>
                   <JFXTextField focusColor="#4a8cb5" layoutX="247.0" layoutY="169.0" prefHeight="25.0" prefWidth="203.0" promptText="ex:966+" unFocusColor="#1a2e47" />
                   <JFXPasswordField focusColor="#4a8cb5" layoutX="243.0" layoutY="257.0" prefHeight="25.0" prefWidth="211.0" promptText="******" unFocusColor="#1a2e47" />
-                  <JFXButton layoutX="201.0" layoutY="345.0" prefHeight="44.0" prefWidth="80.0" style="-fx-background-radius: 5em; -fx-background-color: #1a2e47;" text="login" textFill="WHITE">
+                  <JFXButton layoutX="201.0" layoutY="345.0" prefHeight="44.0" prefWidth="80.0" style="-fx-background-radius: 5em; -fx-background-color: #1a2e47;" text="Login" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

@@ -186,16 +186,7 @@
                         <JFXTextField prefHeight="40.0" prefWidth="247.0" promptText="Enter the total number of people" text="Consumption unit" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="820.0" spacing="20.0">
-                     <children>
-                        <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount Per Box:" wrappingWidth="220.0">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Text>
-                        <JFXTextField prefHeight="40.0" prefWidth="247.0" promptText="Enter the total number of people" text="Amount per box" />
-                     </children>
-                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="820.0" spacing="20.0" />
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
                      <children>
                         <JFXButton graphicTextGap="8.0" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Calculate" textFill="WHITE">
@@ -221,7 +212,6 @@
                   <TableColumn prefWidth="119.0" text="Resource name" />
                   <TableColumn prefWidth="187.0" text="Consumption Per Person" />
                   <TableColumn prefWidth="160.0" text="Consumption Unit" />
-                  <TableColumn prefWidth="150.0" text="Amount Per Box" />
                   <TableColumn prefWidth="75.0" text="total" />
                </columns>
             </TableView>

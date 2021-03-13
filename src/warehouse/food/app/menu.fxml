@@ -146,11 +146,11 @@
             </VBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                <children>
-                  <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Date" />
-                  <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Time" />
-                  <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Meal" />
-                  <JFXComboBox prefHeight="40.0" prefWidth="160.0" promptText="Meal Category" />
-                  <JFXButton graphicTextGap="8.0" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Add " textFill="WHITE">
+                  <JFXComboBox prefHeight="48.0" prefWidth="141.0" promptText="day " />
+                  <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Time" text="Breakfast" />
+                  <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Meal" text="Lunch" />
+                  <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Meal" text="Dinner" />
+                  <JFXButton graphicTextGap="8.0" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Update" textFill="WHITE">
                      <graphic>
                         <FontAwesomeIcon fill="WHITE" iconName="PLUS" size="22" />
                      </graphic>
@@ -162,10 +162,10 @@
             </HBox>
             <TableView prefHeight="464.0" prefWidth="820.0" styleClass="resource-table">
                <columns>
-                  <TableColumn prefWidth="179.0" text="Date" />
-                  <TableColumn minWidth="0.0" prefWidth="96.0" text="Time" />
-                  <TableColumn prefWidth="385.0" text="Meal" />
-                  <TableColumn prefWidth="157.0" text="Category" />
+                  <TableColumn prefWidth="179.0" text="day" />
+                  <TableColumn minWidth="0.0" prefWidth="96.0" text="breakfast" />
+                  <TableColumn prefWidth="233.0" text="lunch" />
+                  <TableColumn prefWidth="309.0" text="dinner" />
                </columns>
             </TableView>
          </children>

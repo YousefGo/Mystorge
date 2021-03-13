@@ -135,7 +135,7 @@
          <children>
             <AnchorPane layoutX="6.0" prefHeight="150.0" prefWidth="914.0" style="-fx-background-color: #1a2e47;">
                <children>
-                  <Label layoutX="41.0" layoutY="59.0" text="sign up in the system" textFill="WHITE">
+                  <Label layoutX="41.0" layoutY="59.0" text="Sign up in the system" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
@@ -168,32 +168,32 @@
                         <Image url="@../../../Asset/WhatsApp_Image_2021-02-23_at_1.20.16_PM-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="77.0" layoutY="127.0" text="first name:" textFill="#1a2e47">
+                  <Label layoutX="78.0" layoutY="127.0" prefHeight="22.0" prefWidth="155.0" text="First Name:* " textFill="#1a2e47">
                      <font>
                         <Font name="Cambria Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="78.0" layoutY="240.0" text="phone number:" textFill="#1a2e47">
+                  <Label layoutX="78.0" layoutY="240.0" text="Phone Number:*" textFill="#1a2e47">
                      <font>
                         <Font name="Cambria Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="77.0" layoutY="182.0" text="last name:" textFill="#1a2e47">
+                  <Label layoutX="77.0" layoutY="182.0" text="Last Name:*" textFill="#1a2e47">
                      <font>
                         <Font name="Cambria Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="75.0" layoutY="295.0" text="email:" textFill="#1a2e47">
+                  <Label layoutX="75.0" layoutY="295.0" text="email:*" textFill="#1a2e47">
                      <font>
                         <Font name="Cambria Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="76.0" layoutY="350.0" text="password:" textFill="#1a2e47">
+                  <Label layoutX="76.0" layoutY="350.0" text="password:*" textFill="#1a2e47">
                      <font>
                         <Font name="Cambria Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="76.0" layoutY="403.0" text="conform password:" textFill="#1a2e47">
+                  <Label layoutX="76.0" layoutY="403.0" text="conform password:*" textFill="#1a2e47">
                      <font>
                         <Font name="Cambria Bold" size="18.0" />
                      </font>
@@ -204,7 +204,7 @@
                   <JFXTextField focusColor="#4a8cb5" layoutX="276.0" layoutY="296.0" prefHeight="25.0" prefWidth="187.0" promptText="\@gmail.com" unFocusColor="#1a2e47" />
                   <JFXPasswordField focusColor="#4a8cb5" layoutX="276.0" layoutY="348.0" prefHeight="25.0" prefWidth="185.0" promptText="******" unFocusColor="#1a2e47" />
                   <JFXPasswordField focusColor="#4a8cb5" layoutX="276.0" layoutY="402.0" prefHeight="25.0" prefWidth="185.0" promptText="******" unFocusColor="#1a2e47" />
-                  <JFXButton layoutX="208.0" layoutY="488.0" prefHeight="39.0" prefWidth="79.0" style="-fx-background-color: #1a2e47; -fx-background-radius: 5em;" text="sign up" textFill="WHITE">
+                  <JFXButton layoutX="208.0" layoutY="488.0" prefHeight="39.0" prefWidth="79.0" style="-fx-background-color: #1a2e47; -fx-background-radius: 5em;" text="Sign up" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
