@@ -12,7 +12,7 @@ import javafx.fxml.Initializable;
 /**
  * FXML Controller class
  *
- * @author mobai
+ * @author yoooo
  */
 public class CalculatorController implements Initializable {
 
@@ -21,7 +21,6 @@ public class CalculatorController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
         // TODO
     }    
     

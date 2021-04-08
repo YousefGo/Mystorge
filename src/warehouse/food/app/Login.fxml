@@ -135,7 +135,7 @@
          <children>
             <AnchorPane layoutX="6.0" prefHeight="150.0" prefWidth="914.0" style="-fx-background-color: #1a2e47;" styleClass="navigation-bar">
                <children>
-                  <Label layoutX="38.0" layoutY="54.0" prefHeight="53.0" prefWidth="434.0" text="Login in the system" textFill="WHITE">
+                  <Label layoutX="38.0" layoutY="54.0" prefHeight="53.0" prefWidth="434.0" text="Login" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
@@ -184,7 +184,7 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </JFXButton>
-                  <Hyperlink layoutX="165.0" layoutY="307.0" text="forgot Your password?" underline="true">
+                  <Hyperlink layoutX="165.0" layoutY="307.0" text="Forgot Your password?" underline="true">
                      <font>
                         <Font size="14.0" />
                      </font>
