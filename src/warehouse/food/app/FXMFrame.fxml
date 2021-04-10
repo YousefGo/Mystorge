@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="MyBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="warehouse.food.app.FXMFrameController">
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="800.0" prefWidth="280.0" styleClass="navigation-bar" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="150.0" prefWidth="280.0">
+               <children>
+                  <AnchorPane prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 150;">
+                     <children>
+                        <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="16.0" layoutY="15.0">
+                           <image>
+                              <Image url="@../../../Asset/WhatsApp_Image_2021-02-23_at_1.20.16_PM-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </HBox>
+            <Line endX="135.0" startX="-140.0" stroke="WHITE" strokeWidth="2.0" />
+            <JFXButton fx:id="btnHome" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnHomeAction" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Home">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="HOME" size="30PX" />
+               </graphic>
+            </JFXButton>
+            <Line endX="135.0" startX="-140.0" stroke="WHITE" strokeWidth="2.0" />
+            <JFXButton fx:id="btnStock" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnStockAction" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Stock">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="CUBES" size="30PX" />
+               </graphic>
+            </JFXButton>
+            <Line endX="135.0" startX="-140.0" stroke="WHITE" strokeWidth="2.0" />
+            <JFXButton fx:id="btnReport" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnReportAction" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Reports">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="PRINT" size="30PX" />
+               </graphic>
+            </JFXButton>
+            <Line endX="135.0" startX="-140.0" stroke="WHITE" strokeWidth="2.0" />
+            <JFXButton fx:id="btnCalculator" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnCalculatorAction" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Calculator">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="CALCULATOR" size="30PX" />
+               </graphic>
+            </JFXButton>
+            <Line endX="135.0" startX="-140.0" stroke="WHITE" strokeWidth="2.0" />
+            <JFXButton fx:id="btnMenu" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnMenuAction" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Menu">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="BARS" size="30PX" />
+               </graphic>
+            </JFXButton>
+            <Line endX="135.0" startX="-140.0" stroke="WHITE" strokeWidth="2.0" />
+            <JFXButton fx:id="btnAddItems" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnAddItemsAction" prefHeight="60.0" prefWidth="280.0" styleClass="navigation-bar-text" text="Add Items">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" iconName="PLUS" size="30PX" />
+               </graphic>
+            </JFXButton>
+            <Line endX="135.0" startX="-140.0" stroke="WHITE" strokeWidth="2.0" />
+         </children>
+         <padding>
+            <Insets bottom="40.0" top="40.0" />
+         </padding>
+      </VBox>
+   </left>
+</BorderPane>

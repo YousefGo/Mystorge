@@ -16,3 +16,38 @@ Button {
 .current-page-button {
     -fx-background-color:  #59AADF;
 }
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+.navigation-bar {
+    -fx-background-color: #59AADF;
+}
+
+.navigation-bar-text {
+    -fx-background-radius: 0;
+    -fx-text-fill: #FFFFFF;
+
+}
+.navigation-bar-text:hover {
+        -fx-background-color: #7ABBE5;
+
+}
+.current, .current:hover {
+    -fx-background-color: #1A2E47;
+}
+
+.logo {
+    -fx-background-radius: 200;
+}
+
+.resource-table .column-header-background .nested-column-header .table-column, .resource-table .column-header-background .filler {
+    -fx-background-color: #59AADF;
+}
+
+.resource-table .column-header-background .label{
+    -fx-text-fill: white;
+}
