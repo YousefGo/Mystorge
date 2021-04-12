@@ -4,14 +4,13 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="800.0" prefWidth="920.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="warehouse.food.app.CalculatorController">
+<VBox prefHeight="800.0" prefWidth="920.0" spacing="50.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="warehouse.food.app.CalculatorController">
    <children>
       <VBox prefHeight="83.0" prefWidth="820.0">
          <children>
@@ -23,7 +22,7 @@
             <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="this page is for using a meal calculator that caculate the required resources for a meal" />
          </children>
       </VBox>
-      <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+      <VBox prefHeight="496.0" prefWidth="820.0" spacing="30.0">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="200.0" spacing="20.0">
                <children>
@@ -32,7 +31,12 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Text>
-                  <JFXTextField prefHeight="40.0" prefWidth="247.0" promptText="Enter the total number of people" />
+                  <JFXTextField fx:id="txtFPeopleNumber" prefHeight="40.0" prefWidth="247.0" promptText="Enter the total number of people" />
+                  <Label fx:id="lblErrPeopleNumber" prefHeight="21.0" prefWidth="284.0" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="820.0" spacing="20.0">
@@ -42,7 +46,12 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Text>
-                  <JFXComboBox prefHeight="31.0" prefWidth="250.0" promptText="Item name" />
+                  <JFXComboBox fx:id="cBoxItemName" prefHeight="31.0" prefWidth="250.0" promptText="Item name" />
+                  <Label fx:id="lblErrItemSelect" prefHeight="21.0" prefWidth="280.0" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="820.0" spacing="20.0">
@@ -52,18 +61,22 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Text>
-                  <JFXTextField prefHeight="40.0" prefWidth="247.0" promptText="Enter the total number of people" text="Consumption per person" />
+                  <JFXTextField fx:id="txtFConsumption" prefHeight="40.0" prefWidth="247.0" promptText="Consumption per person" />
+                  <Label fx:id="lblErrConsumption" prefHeight="21.0" prefWidth="291.0" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="820.0" spacing="20.0" />
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+            <VBox alignment="CENTER" prefHeight="195.0" prefWidth="820.0" spacing="20.0">
                <children>
-                  <JFXButton graphicTextGap="8.0" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Calculate" textFill="WHITE">
+                  <JFXButton fx:id="btnCalculate" graphicTextGap="8.0" onAction="#btnCalculateAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Calculate" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </JFXButton>
-                  <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Amount of consumption:" wrappingWidth="264.0">
+                  <Text fx:id="lblTotal" fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="554.0">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -75,15 +88,6 @@
             </VBox>
          </children>
       </VBox>
-      <TableView prefHeight="387.0" prefWidth="820.0" styleClass="resource-table">
-         <columns>
-            <TableColumn prefWidth="125.0" text="People number" />
-            <TableColumn prefWidth="119.0" text="Item name" />
-            <TableColumn prefWidth="187.0" text="Consumption Per Person" />
-            <TableColumn prefWidth="157.0" text="Total consumption" />
-            <TableColumn prefWidth="164.0" text="Total Price" />
-         </columns>
-      </TableView>
    </children>
    <padding>
       <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
