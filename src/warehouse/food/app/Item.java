@@ -14,15 +14,15 @@ public class Item {
     String name;
     double unitPrice;
     String unitType;
-    int categoryID;
+    String category;
     int amountPerBox;
 
-    public Item(int ID, String name, double unitPrice, String unitType, int categoryID, int amountPerBox) {
+    public Item(int ID, String name, double unitPrice, String unitType, String category, int amountPerBox) {
         this.ID = ID;
         this.name = name;
         this.unitPrice = unitPrice;
         this.unitType = unitType;
-        this.categoryID = categoryID;
+        this.category = category;
         this.amountPerBox = amountPerBox;
     }
 
@@ -58,12 +58,12 @@ public class Item {
         this.unitType = unitType;
     }
 
-    public int getCategoryID() {
-        return categoryID;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCategoryID(int categoryID) {
-        this.categoryID = categoryID;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public int getAmountPerBox() {
@@ -73,8 +73,5 @@ public class Item {
     public void setAmountPerBox(int amountPerBox) {
         this.amountPerBox = amountPerBox;
     }
-
-   
-
    
 }

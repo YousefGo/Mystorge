@@ -29,7 +29,7 @@
          <children>
             <VBox prefHeight="61.0" prefWidth="251.0">
                <children>
-                  <Label fx:id="lblErrItemName" prefHeight="25.0" prefWidth="216.0" text="This Field is mandatory" textFill="RED">
+                  <Label fx:id="lblErrItemName" prefHeight="25.0" prefWidth="216.0" textFill="RED">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -39,7 +39,7 @@
             </VBox>
             <VBox prefHeight="61.0" prefWidth="251.0">
                <children>
-                  <Label fx:id="lblErrItemUnitType" prefHeight="25.0" prefWidth="216.0" text="This Field is mandatory" textFill="RED">
+                  <Label fx:id="lblErrItemUnitType" prefHeight="25.0" prefWidth="216.0" textFill="RED">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -49,7 +49,7 @@
             </VBox>
             <VBox prefHeight="61.0" prefWidth="251.0">
                <children>
-                  <Label fx:id="lblErrItemUnitPrice" prefHeight="25.0" prefWidth="216.0" text="This Field is mandatory" textFill="RED">
+                  <Label fx:id="lblErrItemUnitPrice" prefHeight="25.0" prefWidth="216.0" textFill="RED">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -63,7 +63,7 @@
          <children>
             <VBox prefHeight="61.0" prefWidth="251.0">
                <children>
-                  <Label fx:id="lblErrCategory" prefHeight="25.0" prefWidth="216.0" text="This Field is mandatory" textFill="RED">
+                  <Label fx:id="lblErrCategory" prefHeight="25.0" prefWidth="216.0" textFill="RED">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -73,7 +73,7 @@
             </VBox>
             <VBox prefHeight="61.0" prefWidth="251.0">
                <children>
-                  <Label fx:id="lblErrAmountPerBox" prefHeight="25.0" prefWidth="216.0" text="This Field is mandatory" textFill="RED">
+                  <Label fx:id="lblErrAmountPerBox" prefHeight="25.0" prefWidth="216.0" textFill="RED">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -93,12 +93,12 @@
       </HBox>
       <TableView fx:id="tblItems" prefHeight="337.0" prefWidth="820.0" styleClass="resource-table">
          <columns>
-            <TableColumn prefWidth="101.0" text="ID" />
-            <TableColumn prefWidth="94.0" text="Name" />
-            <TableColumn prefWidth="125.0" text="Unit Type" />
-            <TableColumn prefWidth="107.0" text="Unit price" />
-            <TableColumn prefWidth="112.0" text="Catogray " />
-            <TableColumn prefWidth="136.0" text="Amount per Box" />
+            <TableColumn fx:id="tblCID" prefWidth="101.0" text="ID" />
+            <TableColumn fx:id="tblCName" prefWidth="94.0" text="Name" />
+            <TableColumn fx:id="tblCUnitType" prefWidth="125.0" text="Unit Type" />
+            <TableColumn fx:id="tblCUnitPrice" prefWidth="107.0" text="Unit price" />
+            <TableColumn fx:id="tblCCategory" prefWidth="112.0" text="category" />
+            <TableColumn fx:id="tblCAmountPerBox" prefWidth="136.0" text="Amount per Box" />
          </columns>
       </TableView>
       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
