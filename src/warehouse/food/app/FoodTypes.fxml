@@ -5,6 +5,7 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.HBox?>
@@ -14,7 +15,7 @@
 
 <VBox prefHeight="800.0" prefWidth="920.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="warehouse.food.app.FoodTypesController">
    <children>
-      <VBox prefHeight="83.0" prefWidth="820.0">
+      <VBox prefHeight="117.0" prefWidth="820.0">
          <children>
             <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Items">
                <font>
@@ -24,13 +25,63 @@
             <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="this page is for adding a new Items type to the Itemstable" />
          </children>
       </VBox>
-      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="114.0" prefWidth="820.0" spacing="20.0">
          <children>
-            <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Item Code" />
-            <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Item Name" />
-            <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Item Unit Type" />
-            <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Item uint price" />
-            <JFXButton graphicTextGap="8.0" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Add " textFill="WHITE">
+            <VBox prefHeight="61.0" prefWidth="251.0">
+               <children>
+                  <Label fx:id="lblErrItemName" prefHeight="25.0" prefWidth="216.0" text="This Field is mandatory" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtFitemNameAdd" prefHeight="40.0" prefWidth="160.0" promptText="Item Name" />
+               </children>
+            </VBox>
+            <VBox prefHeight="61.0" prefWidth="251.0">
+               <children>
+                  <Label fx:id="lblErrItemUnitType" prefHeight="25.0" prefWidth="216.0" text="This Field is mandatory" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtFitemUnitTypeAdd" prefHeight="40.0" prefWidth="160.0" promptText="Item Unit Type" />
+               </children>
+            </VBox>
+            <VBox prefHeight="61.0" prefWidth="251.0">
+               <children>
+                  <Label fx:id="lblErrItemUnitPrice" prefHeight="25.0" prefWidth="216.0" text="This Field is mandatory" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtFitemUnitPriceAdd" prefHeight="40.0" prefWidth="160.0" promptText="Item Uint Price" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="96.0" prefWidth="820.0" spacing="20.0">
+         <children>
+            <VBox prefHeight="61.0" prefWidth="251.0">
+               <children>
+                  <Label fx:id="lblErrCategory" prefHeight="25.0" prefWidth="216.0" text="This Field is mandatory" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXComboBox fx:id="cBoxtxtFitemCatAdd1" prefHeight="40.0" prefWidth="255.0" promptText="Item Category" />
+               </children>
+            </VBox>
+            <VBox prefHeight="61.0" prefWidth="251.0">
+               <children>
+                  <Label fx:id="lblErrAmountPerBox" prefHeight="25.0" prefWidth="216.0" text="This Field is mandatory" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtFAmountPerBoxAdd1" prefHeight="40.0" prefWidth="160.0" promptText="Amount per Box" />
+               </children>
+            </VBox>
+            <JFXButton fx:id="btnAdd1" graphicTextGap="8.0" onAction="#btnAddAction" prefHeight="40.0" prefWidth="249.0" style="-fx-background-color: #1A2E47;" text="Add " textFill="WHITE">
                <graphic>
                   <FontAwesomeIcon fill="WHITE" iconName="PLUS" size="22" />
                </graphic>
@@ -40,16 +91,9 @@
             </JFXButton>
          </children>
       </HBox>
-      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
-         <children>
-            <JFXComboBox prefHeight="40.0" prefWidth="160.0" promptText="Item Category" />
-            <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Amount per Box" />
-         </children>
-      </HBox>
-      <TableView prefHeight="464.0" prefWidth="820.0" styleClass="resource-table">
+      <TableView fx:id="tblItems" prefHeight="337.0" prefWidth="820.0" styleClass="resource-table">
          <columns>
             <TableColumn prefWidth="101.0" text="ID" />
-            <TableColumn prefWidth="109.0" text="Code" />
             <TableColumn prefWidth="94.0" text="Name" />
             <TableColumn prefWidth="125.0" text="Unit Type" />
             <TableColumn prefWidth="107.0" text="Unit price" />
@@ -57,6 +101,39 @@
             <TableColumn prefWidth="136.0" text="Amount per Box" />
          </columns>
       </TableView>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <JFXButton fx:id="btnUpdate" graphicTextGap="8.0" onAction="#btnUpdateAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Update" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnDelete" graphicTextGap="8.0" onAction="#btnDeleteAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="820.0" spacing="20.0">
+         <children>
+            <Label fx:id="lblID" prefHeight="26.0" prefWidth="118.0" text="Item ID" textFill="#1a2e47">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtFitemNameUpdate" prefHeight="40.0" prefWidth="160.0" promptText="Item Name" />
+            <JFXTextField fx:id="txtFitemUnitTypeUpdate" prefHeight="40.0" prefWidth="160.0" promptText="Item Unit Type" />
+            <JFXTextField fx:id="txtFitemUnitPriceUpdate" prefHeight="40.0" prefWidth="160.0" promptText="Item Uint Price" />
+            <JFXComboBox fx:id="cBoxtxtFitemCatUpdate" prefHeight="40.0" prefWidth="160.0" promptText="Item Category" />
+            <JFXTextField fx:id="txtFAmountPerBoxUpdate" prefHeight="37.0" prefWidth="169.0" promptText="Amount per Box" />
+            <JFXButton fx:id="btnSave" graphicTextGap="8.0" onAction="#btnSaveAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
    </children>
    <padding>
       <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />

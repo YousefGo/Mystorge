@@ -66,7 +66,7 @@ public class Database {
 
         resoultText = "Total Amount of consumption = " + totalAmount + " " + UnitType + "\n"
                 + "Total Number of Boxes = " + totalAmountPerBox + "\n"
-                + "There is "+AmountPerBox+" "+ UnitType +" "+itemName+" in each box\n"
+                + "There is " + AmountPerBox + " " + UnitType + " " + itemName + " in each box\n"
                 + "Totla price = " + totalPrice + "\n";
         st.close();
         con.close();
@@ -74,19 +74,99 @@ public class Database {
         return resoultText;
     }
 
-    public void insertUser(String username, String password, String emial, String phone, String address) throws SQLException {
+    //--------------End of calculatoe page--------------------------------------------
+    //--------------FoodTypes page--------------------------------------------
+    public void insertItem(String Name, double UnitPrice, String UnitType, int CategoryID, double AmountPerBox) throws SQLException {
         String sqlCommand
-                = "INSERT INTO USERS(Username, Password, Email, Phone, Address) "
-                + "VALUES('" + username + "','" + password + "','" + emial + "','" + phone + "','" + address + "');";
+                = "INSERT INTO ITEMS( Name, UnitPrice, UnitType, CategoryID, AmountPerBox) "
+                + "VALUES('" + Name + "'," + UnitPrice + ",'" + UnitType + "'," + CategoryID + "," + AmountPerBox + ");";
 
         Connection con = this.connect();
         Statement st = con.createStatement();
         st.executeUpdate(sqlCommand);
         st.close();
         con.close();
-        System.out.println("the user added");
+        System.out.println("the Item added Successfully");
     }
 
+    public void deleteItme(int ID) throws SQLException {
+        String sql = "DELETE FROM ITEMS WHERE ID = " + ID + ";";
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        st.executeUpdate(sql);
+
+        st.close();
+        con.close();
+
+    }
+
+    public int getCatIDId(String CatName) throws SQLException {
+        String sql = "SELECT ID FROM CATEGORY WHERE Name='" + CatName + "';";
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sql);
+        int id = rs.getInt("id");
+        st.close();
+        con.close();
+        return id;
+
+    }
+
+    public void updateItem(int ID, String Name, double UnitPrice, String UnitType, int CategoryID, double AmountPerBox) throws SQLException {
+        String sql = "UPDATE ITEMS set Name = '" + Name + "', UnitPrice=" + UnitPrice + " , UnitType='" + UnitType + "' , CategoryID=" + CategoryID + ", AmountPerBox=" + AmountPerBox + " "
+                + "WHERE ID=" + ID + ";";
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        st.executeUpdate(sql);
+        st.close();
+        con.close();
+
+    }
+
+    public void getAllItems(ObservableList<Item> oblist) throws SQLException {
+        oblist.clear();
+        String sqlCommand = ""
+                + "SELECT ID, Name, UnitPrice, UnitType, CategoryID, AmountPerBox "
+                + "FROM ITEMS;";
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sqlCommand);
+
+        while (rs.next()) {
+            int ID = rs.getInt("ID");
+            String Name = rs.getString("Name");
+            double UnitPrice = rs.getDouble("UnitPrice");
+            String UnitType = rs.getString("UnitType");
+            int CategoryID = rs.getInt("CategoryID");
+            int AmountPerBox = rs.getInt("AmountPerBox");
+
+            Item item = new Item(ID, Name, UnitPrice, UnitType, CategoryID, AmountPerBox);
+
+            oblist.add(item);
+        }
+        st.close();
+        con.close();
+    }
+
+    public void getCatNames(ObservableList oblist) throws SQLException {
+        oblist.clear();
+        String sqlCommand = ""
+                + "SELECT Name "
+                + "FROM CATEGORY;";
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sqlCommand);
+
+        while (rs.next()) {
+            String ItemName = rs.getString("Name");
+            oblist.add(ItemName);
+        }
+        st.close();
+        con.close();
+    }
+
+    //--------------End of FoodTypes page--------------------------------------------
+    
     public void createRoom(String roomNumber, double roomRate) throws SQLException {
         String sqlCommand
                 = "INSERT INTO ROOMS(RoomNumber, RoomRate)"

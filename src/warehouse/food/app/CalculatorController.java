@@ -47,7 +47,7 @@ public class CalculatorController implements Initializable {
     @FXML
     private Text lblTotal;
 
-    ObservableList<String> blist = FXCollections.observableArrayList("yousef");
+    ObservableList<String> oblist = FXCollections.observableArrayList();
 
     /**
      * Initializes the controller class.
@@ -56,11 +56,11 @@ public class CalculatorController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         Database db = new Database();
         try {
-            db.getItesmsNames(blist);
+            db.getItesmsNames(oblist);
         } catch (SQLException ex) {
             Logger.getLogger(CalculatorController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        cBoxItemName.setItems(blist);
+        cBoxItemName.setItems(oblist);
         // TODO
     }
 
