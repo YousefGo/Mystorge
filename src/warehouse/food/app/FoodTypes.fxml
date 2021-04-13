@@ -15,7 +15,7 @@
 
 <VBox prefHeight="800.0" prefWidth="920.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="warehouse.food.app.FoodTypesController">
    <children>
-      <VBox prefHeight="117.0" prefWidth="820.0">
+      <VBox prefHeight="70.0" prefWidth="820.0">
          <children>
             <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Items">
                <font>
@@ -25,7 +25,7 @@
             <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="this page is for adding a new Items type to the Itemstable" />
          </children>
       </VBox>
-      <HBox alignment="CENTER_LEFT" prefHeight="114.0" prefWidth="820.0" spacing="20.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="76.0" prefWidth="820.0" spacing="20.0">
          <children>
             <VBox prefHeight="61.0" prefWidth="251.0">
                <children>
@@ -59,7 +59,7 @@
             </VBox>
          </children>
       </HBox>
-      <HBox alignment="CENTER_LEFT" prefHeight="96.0" prefWidth="820.0" spacing="20.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="86.0" prefWidth="820.0" spacing="20.0">
          <children>
             <VBox prefHeight="61.0" prefWidth="251.0">
                <children>
@@ -91,7 +91,7 @@
             </JFXButton>
          </children>
       </HBox>
-      <TableView fx:id="tblItems" prefHeight="337.0" prefWidth="820.0" styleClass="resource-table">
+      <TableView fx:id="tblItems" onMousePressed="#tblMousePressAction" prefHeight="337.0" prefWidth="820.0" styleClass="resource-table">
          <columns>
             <TableColumn fx:id="tblCID" prefWidth="101.0" text="ID" />
             <TableColumn fx:id="tblCName" prefWidth="94.0" text="Name" />
@@ -101,21 +101,7 @@
             <TableColumn fx:id="tblCAmountPerBox" prefWidth="136.0" text="Amount per Box" />
          </columns>
       </TableView>
-      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
-         <children>
-            <JFXButton fx:id="btnUpdate" graphicTextGap="8.0" onAction="#btnUpdateAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Update" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="btnDelete" graphicTextGap="8.0" onAction="#btnDeleteAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Delete" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </JFXButton>
-         </children>
-      </HBox>
-      <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="820.0" spacing="20.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="89.0" prefWidth="820.0" spacing="20.0">
          <children>
             <Label fx:id="lblID" prefHeight="26.0" prefWidth="118.0" text="Item ID" textFill="#1a2e47">
                <font>
@@ -127,6 +113,15 @@
             <JFXTextField fx:id="txtFitemUnitPriceUpdate" prefHeight="40.0" prefWidth="160.0" promptText="Item Uint Price" />
             <JFXComboBox fx:id="cBoxtxtFitemCatUpdate" prefHeight="40.0" prefWidth="160.0" promptText="Item Category" />
             <JFXTextField fx:id="txtFAmountPerBoxUpdate" prefHeight="37.0" prefWidth="169.0" promptText="Amount per Box" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="820.0" spacing="20.0">
+         <children>
+            <JFXButton fx:id="btnDelete" graphicTextGap="8.0" onAction="#btnDeleteAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </JFXButton>
             <JFXButton fx:id="btnSave" graphicTextGap="8.0" onAction="#btnSaveAction" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Save" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />

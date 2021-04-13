@@ -23,6 +23,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -56,8 +57,6 @@ public class FoodTypesController implements Initializable {
     private JFXButton btnAdd1;
     @FXML
     private TableView<Item> tblItems;
-    @FXML
-    private JFXButton btnUpdate;
     @FXML
     private JFXButton btnDelete;
     @FXML
@@ -166,7 +165,7 @@ public class FoodTypesController implements Initializable {
         if (valid) {
             name = name;
             double UnitPrice = Double.parseDouble(unitPrice);
-            unitType = unitType;          
+            unitType = unitType;
             catName = catName;
             double AmountPerBox = Double.parseDouble(amountPerBox);
 
@@ -175,20 +174,6 @@ public class FoodTypesController implements Initializable {
             tblItems.setItems(oblistItems);
 
         }
-
-    }
-
-    @FXML
-    private void btnUpdateAction(ActionEvent event) {
-        Database db = new Database();
-        Item selectedItem = tblItems.getSelectionModel().getSelectedItem();
-
-        txtFitemNameUpdate.setText(selectedItem.getName());
-        txtFitemUnitPriceUpdate.setText(selectedItem.getUnitPrice() + "");
-        txtFitemUnitTypeUpdate.setText(selectedItem.getUnitType());
-        txtFAmountPerBoxUpdate.setText(selectedItem.getAmountPerBox() + "");
-        cBoxtxtFitemCatUpdate.setValue(selectedItem.getCategory());
-        lblID.setText(selectedItem.getID() + "");
 
     }
 
@@ -225,6 +210,19 @@ public class FoodTypesController implements Initializable {
         db.updateItem(Integer.parseInt(lblID.getText()), name, UnitPrice, unitType, AmountPerBox, catName);
         db.getAllItems(oblistItems);
         tblItems.setItems(oblistItems);
+    }
+
+    @FXML
+    private void tblMousePressAction(MouseEvent event) {
+        Database db = new Database();
+        Item selectedItem = tblItems.getSelectionModel().getSelectedItem();
+
+        txtFitemNameUpdate.setText(selectedItem.getName());
+        txtFitemUnitPriceUpdate.setText(selectedItem.getUnitPrice() + "");
+        txtFitemUnitTypeUpdate.setText(selectedItem.getUnitType());
+        txtFAmountPerBoxUpdate.setText(selectedItem.getAmountPerBox() + "");
+        cBoxtxtFitemCatUpdate.setValue(selectedItem.getCategory());
+        lblID.setText(selectedItem.getID() + "");
     }
 
 }
