@@ -180,6 +180,47 @@ public class Database {
 
     //--------------End of FoodTypes page--------------------------------------------
     
+    //-------------- Login page --------------------------------------------
+    public boolean login(String phone, String password) throws SQLException {
+
+        String sql = "SELECT * FROM USERS";
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sql);
+        boolean check = false;
+
+        while (rs.next()) {
+            String e = rs.getString("phone");
+            String p = rs.getString("password");
+            if (phone.equals(e) && password.equals(p)) {
+                check = true;
+                break;
+            }
+        }
+        st.close();
+        con.close();
+        return check;
+    }
+
+    //--------------End of Login page--------------------------------------------
+    
+    //-------------- Register page --------------------------------------------
+    
+    void registerInsert(String FirstName, String LastName, String phone, String email, String password) throws SQLException {
+
+        String sql = "INSERT INTO USERS(Fname, Lname, Phone, Email, Password) VALUES('" + FirstName + "', '" + LastName + "', '" + phone + "', '" + email + "', '" + password +"')";
+        Connection con = this.connect();
+
+        Statement st = con.createStatement();
+        st.executeUpdate(sql);
+        st.close();
+        con.close();
+        System.out.println("The user added :)");
+
+    }
+
+    //--------------End of Register page--------------------------------------------
+    
 //    public void createRoom(String roomNumber, double roomRate) throws SQLException {
 //        String sqlCommand
 //                = "INSERT INTO ROOMS(RoomNumber, RoomRate)"

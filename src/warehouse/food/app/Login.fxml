@@ -51,14 +51,14 @@
                   <Font name="Calibri Bold" size="24.0" />
                </font>
             </Label>
-            <JFXTextField focusColor="#4a8cb5" layoutX="247.0" layoutY="169.0" prefHeight="25.0" prefWidth="203.0" promptText="ex:966+" unFocusColor="#1a2e47" />
-            <JFXPasswordField focusColor="#4a8cb5" layoutX="243.0" layoutY="257.0" prefHeight="25.0" prefWidth="211.0" promptText="******" unFocusColor="#1a2e47" />
+            <JFXTextField fx:id="txtPhone" focusColor="#4a8cb5" layoutX="247.0" layoutY="169.0" onAction="#txtPhoneAction" prefHeight="25.0" prefWidth="203.0" promptText="ex:966+" unFocusColor="#1a2e47" />
+            <JFXPasswordField fx:id="txtPass" focusColor="#4a8cb5" layoutX="238.0" layoutY="245.0" onAction="#txtPassAction" prefHeight="25.0" prefWidth="211.0" promptText="******" unFocusColor="#1a2e47" />
             <JFXButton fx:id="btnLogin" layoutX="184.0" layoutY="344.0" onAction="#btnLoginAction" prefHeight="44.0" prefWidth="126.0" style="-fx-background-radius: 5em; -fx-background-color: #1a2e47;" styleClass="jfx-button" text="Login" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </JFXButton>
-            <Label alignment="CENTER" layoutX="101.0" layoutY="131.0" prefHeight="17.0" prefWidth="287.0" textFill="#f40000">
+            <Label fx:id="lblRed" alignment="CENTER" layoutX="101.0" layoutY="129.0" prefHeight="17.0" prefWidth="302.0" textFill="#f40000">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
