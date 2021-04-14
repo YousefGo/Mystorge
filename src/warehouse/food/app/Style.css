@@ -51,3 +51,16 @@ Button {
 .resource-table .column-header-background .label{
     -fx-text-fill: white;
 }
+
+/* -----------  Home Style ---------*/
+.track{
+    -fx-stroke: lightgrey;
+    -fx-fill: none;
+
+}
+.progress{
+    -fx-fill: none;
+    -fx-stroke-width: 10;
+
+}
+/* ----------- End of Home Style ---------*/

@@ -15,8 +15,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+import static warehouse.food.app.User.getUser;
 
 /**
  * FXML Controller class
@@ -39,6 +44,10 @@ public class FXMFrameController implements Initializable {
     private JFXButton btnMenu;
     @FXML
     private JFXButton btnAddItems;
+    @FXML
+    private Label lblWelcome;
+    @FXML
+    private JFXButton btnLogout;
 
     /**
      * Initializes the controller class.
@@ -47,7 +56,8 @@ public class FXMFrameController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         changeMenuColors(btnHome);
         loadUI("Home");
-    }    
+        lblWelcome.setText("Welcome "+getUser()+" !");
+    }
 
     @FXML
     private void btnHomeAction(ActionEvent event) {
@@ -84,7 +94,7 @@ public class FXMFrameController implements Initializable {
         changeMenuColors(btnAddItems);
         loadUI("FoodTypes");
     }
-    
+
     private void loadUI(String ui) {
         Parent root = null;
         try {
@@ -102,7 +112,18 @@ public class FXMFrameController implements Initializable {
         btnCalculator.getStyleClass().remove("current");
         btnMenu.getStyleClass().remove("current");
         btnAddItems.getStyleClass().remove("current");
-        button.getStyleClass().add("current"); 
+        button.getStyleClass().add("current");
     }
-    
+
+    @FXML
+    private void btnLogoutAction(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+        stage.show();
+    }
 }

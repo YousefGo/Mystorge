@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -123,6 +124,29 @@
                </graphic>
             </JFXButton>
             <Line endX="135.0" startX="-140.0" stroke="WHITE" strokeWidth="2.0" />
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="lblWelcome" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Line endX="135.0" startX="-140.0" stroke="WHITE" strokeWidth="2.0" />
+                        <JFXButton fx:id="btnLogout" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" onAction="#btnLogoutAction" prefHeight="60.0" prefWidth="280.0" style="-fx-text-fill: #930000;" styleClass="navigation-bar-text" text="Log out" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </JFXButton>
+                        <Line endX="135.0" startX="-140.0" stroke="WHITE" strokeWidth="2.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
          </children>
          <padding>
             <Insets bottom="40.0" top="40.0" />

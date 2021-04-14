@@ -16,6 +16,27 @@ public class Item {
     String unitType;
     String category;
     int amountPerBox;
+    int quantity;
+
+    public Item(String name) {
+        this.name = name;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public Item(int ID, String name, double unitPrice, String unitType, int quantity) {
+        this.ID = ID;
+        this.name = name;
+        this.unitPrice = unitPrice;
+        this.unitType = unitType;
+        this.quantity = quantity;
+    }
 
     public Item(int ID, String name, double unitPrice, String unitType, String category, int amountPerBox) {
         this.ID = ID;

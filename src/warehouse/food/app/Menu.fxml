@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.HBox?>
@@ -24,30 +25,76 @@
             <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="this page shows the date, time and meal " />
          </children>
       </VBox>
-      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+      <VBox prefHeight="113.0" prefWidth="820.0">
          <children>
-            <JFXComboBox prefHeight="48.0" prefWidth="141.0" promptText="day " />
-            <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Time" text="Breakfast" />
-            <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Meal" text="Lunch" />
-            <JFXTextField prefHeight="40.0" prefWidth="160.0" promptText="Meal" text="Dinner" />
-            <JFXButton graphicTextGap="8.0" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Update" textFill="WHITE">
-               <graphic>
-                  <FontAwesomeIcon fill="WHITE" iconName="PLUS" size="22" />
-               </graphic>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="32.0" prefWidth="820.0" spacing="20.0">
+               <children>
+                  <Label fx:id="lblErrDate" prefHeight="32.0" prefWidth="203.0" textFill="RED" />
+                  <Label fx:id="lblErrBreakfast" prefHeight="32.0" prefWidth="141.0" textFill="RED" />
+                  <Label fx:id="lblErrLunch" prefHeight="32.0" prefWidth="147.0" textFill="RED" />
+                  <Label fx:id="lblErrDinner" prefHeight="50.0" prefWidth="160.0" textFill="RED" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="820.0" spacing="20.0">
+               <children>
+                  <JFXDatePicker fx:id="txtDate" defaultColor="#59aadf" prefHeight="50.0" prefWidth="211.0" promptText="Date" />
+                  <JFXTextField fx:id="txtBreakfast" prefHeight="50.0" prefWidth="152.0" promptText="Breakfast" />
+                  <JFXTextField fx:id="txtLunch" prefHeight="50.0" prefWidth="160.0" promptText="Lunch" />
+                  <JFXTextField fx:id="txtDinner" prefHeight="50.0" prefWidth="160.0" promptText="Dinner" />
+                  <JFXButton graphicTextGap="8.0" onAction="#addMenu" prefHeight="40.0" prefWidth="107.0" style="-fx-background-color: #1A2E47;" text="Add" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" iconName="PLUS" size="22" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <TableView fx:id="tableMenu" onMousePressed="#selectMenu" prefHeight="362.0" prefWidth="820.0" styleClass="resource-table">
+         <columns>
+            <TableColumn fx:id="colDate" prefWidth="228.0" text="Date" />
+            <TableColumn fx:id="colBreakfast" minWidth="0.0" prefWidth="200.0" text="Breakfast" />
+            <TableColumn fx:id="colLunch" prefWidth="192.0" text="Lunch" />
+            <TableColumn fx:id="colDinner" prefWidth="199.0" text="Dinner" />
+         </columns>
+      </TableView>
+      <VBox prefHeight="113.0" prefWidth="820.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="820.0" spacing="20.0">
+               <children>
+                  <Label fx:id="lblErrDateUpdate" prefHeight="32.0" prefWidth="214.0" textFill="RED" />
+                  <Label fx:id="lblErrBreakfastUpdate" prefHeight="32.0" prefWidth="148.0" textFill="RED" />
+                  <Label fx:id="lblErrLunchUpdate" prefHeight="32.0" prefWidth="161.0" textFill="RED" />
+                  <Label fx:id="lblErrDinnerUpdate" prefHeight="50.0" prefWidth="160.0" textFill="RED" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="820.0" spacing="20.0">
+               <children>
+                  <JFXDatePicker fx:id="txtDateUpdate" defaultColor="#59aadf" prefHeight="50.0" prefWidth="211.0" promptText="Date" />
+                  <JFXTextField fx:id="txtBreakfastUpdate" prefHeight="50.0" prefWidth="152.0" promptText="Breakfast" />
+                  <JFXTextField fx:id="txtLunchUpdate" prefHeight="50.0" prefWidth="160.0" promptText="Lunch" />
+                  <JFXTextField fx:id="txtDinnerUpdate" prefHeight="50.0" prefWidth="160.0" promptText="Dinner" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="88.0" prefWidth="820.0" spacing="20.0">
+         <children>
+            <JFXButton graphicTextGap="8.0" onAction="#deleteMenu" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton graphicTextGap="8.0" onAction="#updateMenu" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #1A2E47;" text="Update" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </JFXButton>
          </children>
       </HBox>
-      <TableView prefHeight="464.0" prefWidth="820.0" styleClass="resource-table">
-         <columns>
-            <TableColumn prefWidth="179.0" text="day" />
-            <TableColumn minWidth="0.0" prefWidth="96.0" text="breakfast" />
-            <TableColumn prefWidth="233.0" text="lunch" />
-            <TableColumn prefWidth="194.0" text="dinner" />
-         </columns>
-      </TableView>
    </children>
    <padding>
       <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />

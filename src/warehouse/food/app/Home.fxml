@@ -46,7 +46,7 @@
                         <Image url="@../../../Asset/box.png" />
                      </image>
                   </ImageView>
-                  <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="15">
+                  <Text fx:id="txtItems" fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="15">
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>
@@ -79,7 +79,7 @@
                         <Image url="@../../../Asset/rack.png" />
                      </image>
                   </ImageView>
-                  <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="1043">
+                  <Text fx:id="txtItemDetaiels" fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="1043">
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>
@@ -92,7 +92,7 @@
                         <Insets top="20.0" />
                      </VBox.margin>
                   </Line>
-                  <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Detaiels" textAlignment="CENTER" wrappingWidth="145.20361328125">
+                  <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Items Quantity" textAlignment="CENTER" wrappingWidth="169.20361328125">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -112,7 +112,7 @@
                         <Image url="@../../../Asset/cart.png" />
                      </image>
                   </ImageView>
-                  <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+                  <Text fx:id="txtZeroStockItems" fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>
@@ -125,7 +125,7 @@
                         <Insets top="20.0" />
                      </VBox.margin>
                   </Line>
-                  <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Zero stock items" textAlignment="CENTER" wrappingWidth="194.20361328125">
+                  <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Zero Stock Items" textAlignment="CENTER" wrappingWidth="194.20361328125">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -149,8 +149,8 @@
                <children>
                   <StackPane prefHeight="155.0" prefWidth="189.0">
                      <children>
-                        <Circle fill="#1f93ff00" radius="100.0" stroke="#1a2e47" strokeType="INSIDE" strokeWidth="10.0" style="-fx-stroke-dash-array: 470;" />
-                        <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="75%">
+                        <Circle fx:id="progressCircle" fill="#1f93ff00" radius="100.0" stroke="#1a2e47" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="progress" />
+                        <Text fx:id="txtTotalStock" fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="75%">
                            <font>
                               <Font size="40.0" />
                            </font>
@@ -185,7 +185,7 @@
                         <Image url="@../../../Asset/hotel-supplier.png" />
                      </image>
                   </ImageView>
-                  <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="8">
+                  <Text fx:id="txtSuppliers" fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="8">
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>

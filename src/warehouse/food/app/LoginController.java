@@ -50,11 +50,13 @@ public class LoginController implements Initializable {
 
     @FXML
     private void btnLoginAction(ActionEvent event) throws IOException, SQLException {
-
+        
         Database data = new Database();
-        boolean signin = data.login(txtPhone.getText(), txtPass.getText());     
+        
+        boolean signin = data.login(txtPhone.getText(), txtPass.getText());
         if (signin) {
-
+            
+            User user = new User(data.getUser(txtPhone.getText()));
             Parent root = FXMLLoader.load(getClass().getResource("FXMFrame.fxml"));
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -66,15 +68,8 @@ public class LoginController implements Initializable {
 
         } else {
             System.out.println("INFO IS WRONG!");
-            lblRed.setText("user not found!!");
+            lblRed.setText("Wrong Username or Password");
         }
-
-//        Parent root = FXMLLoader.load(getClass().getResource("FXMFrame.fxml"));
-//
-//        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//        Scene scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.show();
     }
 
     @FXML
@@ -86,13 +81,4 @@ public class LoginController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
-    @FXML
-    private void txtPhoneAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void txtPassAction(ActionEvent event) {
-    }
-
 }

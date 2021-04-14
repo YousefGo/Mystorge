@@ -10,6 +10,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javafx.collections.ObservableList;
 
 /**
@@ -75,7 +77,6 @@ public class Database {
     }
 
     //--------------End of calculator page--------------------------------------------
-    
     //--------------FoodTypes page--------------------------------------------
     public void insertItem(String Name, double UnitPrice, String UnitType, String CatName, double AmountPerBox) throws SQLException {
         String sqlCommand
@@ -112,7 +113,7 @@ public class Database {
         return id;
 
     }
-    
+
     public String getCatName(int CatID) throws SQLException {
         String sql = "SELECT Name FROM CATEGORY WHERE Name=" + CatID + ";";
         Connection con = connect();
@@ -125,7 +126,7 @@ public class Database {
 
     }
 
-    public void updateItem(int ID, String Name, double UnitPrice, String UnitType,  double AmountPerBox, String catName) throws SQLException {
+    public void updateItem(int ID, String Name, double UnitPrice, String UnitType, double AmountPerBox, String catName) throws SQLException {
         String sql = "UPDATE ITEMS set Name = '" + Name + "', UnitPrice=" + UnitPrice + " , UnitType='" + UnitType + "', AmountPerBox=" + AmountPerBox + " , catName='" + catName + "' "
                 + "WHERE ID=" + ID + ";";
         Connection con = this.connect();
@@ -179,11 +180,10 @@ public class Database {
     }
 
     //--------------End of FoodTypes page--------------------------------------------
-    
     //-------------- Login page --------------------------------------------
     public boolean login(String phone, String password) throws SQLException {
 
-        String sql = "SELECT * FROM USERS";
+        String sql = "SELECT Phone, Password FROM USERS";
         Connection con = this.connect();
         Statement st = con.createStatement();
         ResultSet rs = st.executeQuery(sql);
@@ -203,12 +203,10 @@ public class Database {
     }
 
     //--------------End of Login page--------------------------------------------
-    
     //-------------- Register page --------------------------------------------
-    
-    void registerInsert(String FirstName, String LastName, String phone, String email, String password) throws SQLException {
+    public void registerInsert(String FirstName, String LastName, String phone, String password) throws SQLException {
 
-        String sql = "INSERT INTO USERS(Fname, Lname, Phone, Email, Password) VALUES('" + FirstName + "', '" + LastName + "', '" + phone + "', '" + email + "', '" + password +"')";
+        String sql = "INSERT INTO USERS(Fname, Lname, Phone, Password) VALUES('" + FirstName + "', '" + LastName + "', '" + phone + "', '" + password + "')";
         Connection con = this.connect();
 
         Statement st = con.createStatement();
@@ -219,115 +217,366 @@ public class Database {
 
     }
 
-    //--------------End of Register page--------------------------------------------
-    
-//    public void createRoom(String roomNumber, double roomRate) throws SQLException {
-//        String sqlCommand
-//                = "INSERT INTO ROOMS(RoomNumber, RoomRate)"
-//                + "VALUES('" + roomNumber + "'," + roomRate + ");";
-//
-//        Connection con = this.connect();
-//        Statement st = con.createStatement();
-//        st.executeUpdate(sqlCommand);
-//        st.close();
-//        con.close();
-//        System.out.println("the room added");
-//    }
-//
-//    public boolean login(String username, String password) throws SQLException {
-//        boolean valid;
-//        String sqlCommand = ""
-//                + "SELECT Username, Password "
-//                + "FROM USERS "
-//                + "WHERE Username = '" + username + "' ";
-//
-//        Connection con = this.connect();
-//        Statement st = con.createStatement();
-//        ResultSet rs = st.executeQuery(sqlCommand);
-//        if (rs.next()) {
-//            String name = rs.getString("Username");
-//            String pass = rs.getString("Password");
-//            valid = username.equals(name) && password.equals(pass);
-//        } else {
-//            valid = false;
-//        }
-//        st.close();
-//        con.close();
-//        return valid;
-//
-////        while (rs.next()) {
-////            String name = rs.getString("username");
-////            String pass = rs.getString("password");
-////
-////            if (username.equals(name) && password.equals(pass)) {
-////                st.close();
-////                con.close();
-////                return true;
-////            }
-////        }
-////        st.close();
-////        con.close();
-////        return false;
-//    }
-//
-//    public void reservationRoomsList(ObservableList oblist) throws SQLException {
-//        String sqlCommand = ""
-//                + "SELECT RoomNumber, RoomRate, Availability "
-//                + "FROM ROOMS;";
-//        Connection con = this.connect();
-//        Statement st = con.createStatement();
-//        ResultSet rs = st.executeQuery(sqlCommand);
-//
-//        while (rs.next()) {
-//            String number = rs.getString("RoomNumber");
-//            String rate = rs.getString("RoomRate");
-//            String avilability = rs.getString("Availability");
-//            if (avilability.equals("Avilable")) {
-//                //   Room room = new Room(number, rate, avilability);
-//                //    oblist.add(room);
-//            }
-//        }
-//        System.out.println("closed");
-//        st.close();
-//        con.close();
-//    }
-//
-//    public void adminRoomsList(ObservableList oblist) throws SQLException {
-//        String sqlCommand = ""
-//                + "SELECT RoomNumber, RoomRate, Availability "
-//                + "FROM ROOMS;";
-//        Connection con = this.connect();
-//        Statement st = con.createStatement();
-//        ResultSet rs = st.executeQuery(sqlCommand);
-//
-//        while (rs.next()) {
-//            String number = rs.getString("RoomNumber");
-//            String rate = rs.getString("RoomRate");
-//            String avilability = rs.getString("Availability");
-//
-//            //     Room room = new Room(number, rate, avilability);
-//            //     oblist.add(room);
-//        }
-//        st.close();
-//        con.close();
-//    }
-//
-//    public void checkIn(String number, String checkIn, String checkOut) throws SQLException {
-//        String sqlCommand = ""
-//                + "INSERT INTO RESERVATION(ROOMNUMBER, CHECKIN, CHECKOUT) "
-//                + "VALUES('" + number + "', '" + checkIn + "', '" + checkOut + "');";
-//
-//        String sqlCommand2 = ""
-//                + "UPDATE ROOMS "
-//                + "SET Availability = 'Busy'"
-//                + "WHERE RoomNumber = '" + number + "';";
-//
-//        Connection con = this.connect();
-//        Statement st = con.createStatement();
-//        st.executeUpdate(sqlCommand);
-//        st.executeUpdate(sqlCommand2);
-//        st.close();
-//        con.close();
-//        System.out.println("the reservation added added");
-//    }
+    public boolean register(String phone) throws SQLException {
+
+        String sql = "SELECT Phone FROM USERS "
+                + "WHERE PHONE = '" + phone + "';";
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sql);
+        boolean check = false;
+
+        if (rs.next()) {
+            check = true;
+        }
+        st.close();
+        con.close();
+        return check;
+
+    }
+
+    public String getUser(String phone) throws SQLException {
+        String sql = "SELECT Phone, fname, lname FROM USERS "
+                + "WHERE PHONE = '" + phone + "';";
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sql);
+        String fname = rs.getString("fname");
+        String lname = rs.getString("lname");
+
+        String user = fname + " " + lname;
+
+        st.close();
+        con.close();
+        return user;
+    }
+
+    //----------------------Stock page -----------------//
+    public void getItemsForStock(ObservableList<Item> oblist) throws SQLException {
+        oblist.clear();
+        String sqlCommand = ""
+                + "SELECT ID, Name, UnitPrice, UnitType,Quantity "
+                + "FROM ITEMS ORDER BY Quantity desc ;";
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sqlCommand);
+
+        while (rs.next()) {
+            int ID = rs.getInt("ID");
+            String Name = rs.getString("Name");
+            double UnitPrice = rs.getDouble("UnitPrice");
+            String UnitType = rs.getString("UnitType");
+            int quantity = rs.getInt("Quantity");
+
+            Item item = new Item(ID, Name, UnitPrice, UnitType, quantity);
+
+            oblist.add(item);
+        }
+        st.close();
+        con.close();
+    }
+
+    public void getNamesForItmes(ObservableList oblist) throws SQLException {
+
+        String sqlCommand = ""
+                + "SELECT Name "
+                + "FROM ITEMS;";
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sqlCommand);
+
+        while (rs.next()) {
+
+            String Name = rs.getString("Name");
+
+            Item item = new Item(Name);
+            oblist.add(item);
+        }
+        st.close();
+        con.close();
+    }
+
+    public void updateQyt(int ID, double qyt, String ops) throws SQLException {
+        Connection con = this.connect();
+
+        String getValue = "SELECT Quantity FROM ITEMS WHERE ID =" + ID;
+
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(getValue);
+        String qyti = rs.getString("Quantity");
+        double qytdd = Double.parseDouble(qyti);
+        double res = qytdd + qyt;
+        String sql = "UPDATE ITEMS set Quantity = " + res
+                + " WHERE ID=" + ID + ";";
+
+        st.executeUpdate(sql);
+        sql = "INSERT INTO STOCK(date,Operation,OperationQuantity,ItemID,Username) values" + "("
+                + "DATE()"
+                + ",'" + ops + "',"
+                + qyt
+                + ","
+                + ID + ","
+                + "'" + User.getUser() + "')";
+        st.executeUpdate(sql);
+
+        st.close();
+        con.close();
+
+    }
+
+    public void spendQyt(int ID, double qyt, String ops) throws SQLException {
+        Connection con = this.connect();
+
+        String getValue = "SELECT Quantity FROM ITEMS WHERE ID =" + ID;
+
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(getValue);
+        String qyti = rs.getString("Quantity");
+        double qytdd = Double.parseDouble(qyti);
+        double res = qytdd - qyt;
+        String sql = "UPDATE ITEMS set Quantity = " + res
+                + " WHERE ID=" + ID + ";";
+        st.executeUpdate(sql);
+
+        st.executeUpdate(sql);
+        sql = "INSERT INTO STOCK(date,Operation,OperationQuantity,ItemID,Username) values" + "("
+                + "DATE()"
+                + ",'" + ops + "',"
+                + qyt
+                + ","
+                + ID + ","
+                + "'" + User.getUser() + "')";
+        st.executeUpdate(sql);
+        st.close();
+        con.close();
+
+    }
+
+    public double getItemQuantity(double ID) throws SQLException {
+        Connection con = this.connect();
+
+        String getValue = "SELECT Quantity FROM ITEMS WHERE ID =" + ID;
+
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(getValue);
+        double qyti = rs.getDouble("Quantity");
+
+        st.close();
+        con.close();
+        return qyti;
+
+    }
+    //----------------------End Stock page -----------------//
+
+//------------------------ report page ---------------------------------//
+    public void getItemsForReport(ObservableList<Report> oblist) throws SQLException {
+        oblist.clear();
+        String sqlCommand = ""
+                + "SELECT * "
+                + "FROM STOCK ORDER BY Date  ;";
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sqlCommand);
+
+        while (rs.next()) {
+            String Date = rs.getString("Date");
+            String Operation = rs.getString("Operation");
+
+            double OperationQuantity = rs.getDouble("OperationQuantity");
+            int ItemID = rs.getInt("ItemID");
+
+            String Username = rs.getString("Username");
+
+            Report item = new Report(Date, Operation, OperationQuantity, ItemID, Username);
+
+            oblist.add(item);
+        }
+        st.close();
+        con.close();
+    }
+
+    //------------- find --------------------------------------
+    public void getItemsDateReports(ObservableList oblist) throws SQLException {
+        oblist.clear();
+        String sqlCommand = ""
+                + "SELECT Date "
+                + "FROM STOCK;";
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sqlCommand);
+
+        while (rs.next()) {
+            String date = rs.getString("Date");
+            oblist.add(date);
+        }
+
+        st.close();
+        con.close();
+    }
+
+    public void getSpecficItemDate(ObservableList oblist, String dateit) throws SQLException {
+        oblist.clear();
+        String sqlCommand = ""
+                + "SELECT * "
+                + "FROM STOCK where Date like '%" + dateit + "%'";
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sqlCommand);
+
+        while (rs.next()) {
+            String Date = rs.getString("Date");
+            String Operation = rs.getString("Operation");
+
+            double OperationQuantity = rs.getDouble("OperationQuantity");
+            int ItemID = rs.getInt("ItemID");
+
+            String Username = rs.getString("Username");
+
+            Report item = new Report(Date, Operation, OperationQuantity, ItemID, Username);
+
+            oblist.add(item);
+        }
+
+        st.close();
+        con.close();
+    }
+
+//------------------------ End report page ---------------------------------//
+    //-------------- Menu page--------------------------------------------
+    public void insertMenu(String date, String breakfast, String lunch, String dinner) throws SQLException {
+        String sqlCommand
+                = "INSERT INTO MENU( Date, Breakfast, Lunch, Dinner) "
+                + "VALUES('" + date + "','" + breakfast + "','" + lunch + "','" + dinner + "');";
+
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        st.executeUpdate(sqlCommand);
+        st.close();
+        con.close();
+        System.out.println("the Menu added Successfully");
+    }
+
+    public boolean isExsist(String date) throws SQLException {
+        boolean exsist = false;
+        String sqlCommand = "SELECT * FROM MENU WHERE Date = '" + date + "';";
+
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sqlCommand);
+        if (rs.next()) {
+            exsist = true;
+        }
+        st.close();
+        con.close();
+        return exsist;
+
+    }
+
+    public void updateMenu(String date, String breakfast, String lunch, String dinner) throws SQLException {
+        String sqlCommand
+                = "UPDATE MENU SET Breakfast = '" + breakfast + "', Lunch = '" + lunch + "',"
+                + " Dinner = '" + dinner + "' WHERE Date = '" + date + "';";
+
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        st.executeUpdate(sqlCommand);
+        st.close();
+        con.close();
+        System.out.println("the Menu updated Successfully");
+    }
+
+    public void deleteMenu(String date) throws SQLException {
+
+        String sqlCommand = "DELETE FROM MENU WHERE Date = '" + date + "';";
+
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        st.executeUpdate(sqlCommand);
+        st.close();
+        con.close();
+        System.out.println("the Menu deleted Successfully");
+    }
+
+    public void getMenu(ObservableList oblist) throws SQLException {
+        oblist.clear();
+        String sqlCommand = ""
+                + "SELECT * "
+                + "FROM MENU;";
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sqlCommand);
+
+        while (rs.next()) {
+            oblist.add(new Menu(rs.getString("Date"), rs.getString("Breakfast"), rs.getString("Lunch"), rs.getString("Dinner")));
+        }
+        st.close();
+        con.close();
+    }
+
+    //--------------End of Menu page--------------------------------------------
+    //-------------- Home page--------------------------------------------
+    public int getNumberOfCategory() throws SQLException {
+        int numberOfCategory = 0;
+        String sqlCommand = "SELECT count(*) FROM ITEMS;";
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sqlCommand);
+
+        while (rs.next()) {
+            numberOfCategory = rs.getInt("count(*)");
+        }
+        st.close();
+        con.close();
+        return numberOfCategory;
+    }
+
+    public int getNumberOfItemDetails() throws SQLException {
+        int numberOfItemDetails = 0;
+        String sqlCommand = "SELECT sum(Quantity) From ITEMS;";
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sqlCommand);
+
+        while (rs.next()) {
+            numberOfItemDetails = rs.getInt("sum(Quantity)");
+        }
+        st.close();
+        con.close();
+        return numberOfItemDetails;
+    }
+
+    public int getNumberOfItems() throws SQLException {
+        int numberOfItems = 0;
+        String sqlCommand = "SELECT count(*) From ITEMS;";
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sqlCommand);
+
+        while (rs.next()) {
+            numberOfItems = rs.getInt("count(*)");
+        }
+        st.close();
+        con.close();
+        return numberOfItems;
+    }
+
+    public int getNumberOfZeroStock() throws SQLException {
+        int numberOfZeroStock = 0;
+
+        String sqlCommand = "SELECT count(*)  AS ZeroStock FROM ITEMS WHERE Quantity = 0; ";
+
+//        String sqlCommand = "SELECT (SELECT count(*) FROM CATEGORY) - "
+//                + "(SELECT count (distinct CatName)  FROM ITEMS) AS ZeroStock ;";
+        Connection con = this.connect();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery(sqlCommand);
+
+        while (rs.next()) {
+            numberOfZeroStock = rs.getInt("ZeroStock");
+        }
+        st.close();
+        con.close();
+        return numberOfZeroStock;
+    }
+    //--------------End of Home page--------------------------------------------
 }

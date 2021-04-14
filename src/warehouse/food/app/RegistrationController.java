@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,17 +39,19 @@ public class RegistrationController implements Initializable {
     @FXML
     private JFXTextField txtPhone;
     @FXML
-    private JFXTextField txtEmail;
-    @FXML
     private JFXPasswordField txtPass;
-    @FXML
-    private JFXPasswordField txtPassCon;
     @FXML
     private JFXButton btnSign;
     @FXML
-    private Label lblRed;
-    @FXML
     private Label lblGreen;
+    @FXML
+    private Label lblFLnameErr;
+    @FXML
+    private Label lblPhoneNumber;
+    @FXML
+    private Label lblPassword;
+    @FXML
+    private Label lblSuccess;
 
     /**
      * Initializes the controller class.
@@ -71,45 +74,47 @@ public class RegistrationController implements Initializable {
     @FXML
     private void btnSignAction(ActionEvent event) throws SQLException {
 
-        Database u = new Database();
-        u.registerInsert(txtFirst.getText(), txtLast.getText(), txtPhone.getText(), txtEmail.getText(), txtPass.getText());
+        Database db = new Database();
+        
+        String firstName = txtFirst.getText();
+        String lastName = txtLast.getText();
+        String phone = txtPhone.getText();
+        String pass = txtPass.getText();
 
-//        if (txtFirst.getText().isEmpty() && txtLast.getText().isEmpty()
-//                && txtPhone.getText().isEmpty() && txtEmail.getText().isEmpty()
-//                && txtPass.getText().isEmpty() && txtPassCon.getText().isEmpty()) {
-//
-//            lblRed.setText("You must fill the fields!");
-//            lblGreen.setText(null);
-//
-//        } else if (txtFirst.getText().isEmpty()) {
-//            lblRed.setText("whrite the first name!");
-//            lblGreen.setText("");
-//
-//        } else if (txtLast.getText().isEmpty()) {
-//            lblRed.setText("whrite the last name!");
-//            lblGreen.setText("");
-//
-//        } else if (txtPhone.getText().isEmpty()) {
-//            lblRed.setText("whrite the phone!");
-//            lblGreen.setText("");
-//
-//        } else if (txtEmail.getText().isEmpty()) {
-//            lblRed.setText("whrite the email!");
-//            lblGreen.setText("");
-//
-//        } else if (txtPass.getText().isEmpty()) {
-//            lblRed.setText("whrite the password!");
-//            lblGreen.setText("");
-//
-//        } else if (txtPassCon.getText().isEmpty()) {
-//            lblRed.setText("whrite the password conform!");
-//            lblGreen.setText("");
-//
-//        } else if (!txtPass.getText().equals(txtPassCon.getText())) {   // عشان اشوف اذا كانت كلمه السر متطابقو او لا
-//            lblRed.setText("password does not match :(");
-//            lblGreen.setText(null);
-//            
-//        }
+        boolean valid = true;
 
+        if (firstName.equals("") || lastName.equals("")) {
+            lblFLnameErr.setText("First Name, Last Name are Mandatory");
+            valid = false;
+        } else {
+            lblFLnameErr.setText("");
+        }
+
+        if (phone.equals("")) {
+            lblPhoneNumber.setText("This Feild is mandatory");
+            valid = false;
+        } else if (!Pattern.matches("05{1}[0-9]{8}", phone)) {
+            lblPhoneNumber.setText("Phone Number Must be like 0512345678");
+            valid = false;
+        } else if (db.register(phone)) {
+            lblPhoneNumber.setText("Phone Number is Already Exists");
+            valid = false;
+        } else {
+            lblPhoneNumber.setText("");
+        }
+
+        if (pass.equals("")) {
+            lblPassword.setText("This Feild is mandatory");
+            valid = false;
+        }else {
+            lblPassword.setText("");
+        }
+        
+        if(valid) {
+            db.registerInsert(txtFirst.getText(), txtLast.getText(), txtPhone.getText(), txtPass.getText());
+            lblSuccess.setText("User Successfully Registered");
+        }else {
+            lblSuccess.setText("");
+        }
     }
 }
