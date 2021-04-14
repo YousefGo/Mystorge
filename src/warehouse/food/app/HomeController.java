@@ -5,6 +5,8 @@
  */
 package warehouse.food.app;
 
+import java.awt.Color;
+import java.awt.Paint;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -66,7 +68,6 @@ public class HomeController implements Initializable {
         circumference = radius * 2 * Math.PI;
         progressCircle.getStrokeDashArray().add(circumference);
 
-        
         try {
             // getting information from database
             int numberOfCategory = db.getNumberOfCategory();
@@ -74,26 +75,32 @@ public class HomeController implements Initializable {
             int numberOfItemDetails = db.getNumberOfItemDetails();
             int numberOfZeroStock = db.getNumberOfZeroStock();
             int numberOfSuppliers = numberOfCategory;
-            
+
             // full stock is the maximum number of itemDetails can a stock reach
             int fullStock = 10000;
             // calculate percentage from 0% - 100%
-            double percentage = ((double)numberOfItemDetails/(double)fullStock) * 100.0;
-            
+            double percentage = 100 - (((double) numberOfItemDetails / (double) fullStock) * 100.0);
+
             // setting all the values
-            setProgress(percentage);
-            txtTotalStock.setText((int)percentage + "%");
-            txtItems.setText(numberOfCategory+"");
-            txtItemDetaiels.setText(numberOfItemDetails+"");
-            txtZeroStockItems.setText(numberOfZeroStock+"");
-            txtSuppliers.setText(numberOfSuppliers+"");
-            
-            
+            if (percentage <= 0.0) {
+                
+                progressCircle.setStrokeWidth(percentage);
+                Color a = new Color(244,244,244);
+                progressCircle.setStroke(awtColorToJavaFX(a));
+                //progressCirc;
+            } else {
+                setProgress(percentage);
+
+            }
+            txtTotalStock.setText((int) percentage + "%");
+            txtItems.setText(numberOfCategory + "");
+            txtItemDetaiels.setText(numberOfItemDetails + "");
+            txtZeroStockItems.setText(numberOfZeroStock + "");
+            txtSuppliers.setText(numberOfSuppliers + "");
+
         } catch (SQLException ex) {
             Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        
 
     }
 
@@ -101,6 +108,10 @@ public class HomeController implements Initializable {
         double result = circumference - (percentage / 100.0) * circumference;
         progressCircle.setStrokeDashOffset(result);
 
+    }
+    
+    private javafx.scene.paint.Color awtColorToJavaFX(Color c) {
+        return javafx.scene.paint.Color.rgb(c.getRed(), c.getGreen(), c.getBlue(), c.getAlpha() / 255.0);
     }
 
 }

@@ -162,7 +162,7 @@
                         <Insets top="40.0" />
                      </VBox.margin>
                   </Line>
-                  <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Stock" textAlignment="CENTER" wrappingWidth="194.20361328125">
+                  <Text fill="#1a2e47" strokeType="OUTSIDE" strokeWidth="0.0" text="Available Stock" textAlignment="CENTER" wrappingWidth="194.20361328125">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
