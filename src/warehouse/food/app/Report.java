@@ -10,10 +10,12 @@ package warehouse.food.app;
  * @author mobai
  */
 public class Report {
-    private String date ; 
-    private String opreation ; 
-    private Double opreationQuenrtity ; 
-    private int itemID; 
+
+    private String date;
+    private String opreation;
+    private Double opreationQuenrtity;
+    private int itemID;
+    String phoneNumber;
 
     public String getDate() {
         return date;
@@ -62,5 +64,5 @@ public class Report {
         this.itemID = itemID;
         this.username = username;
     }
-    private String username ; 
+    private String username;
 }

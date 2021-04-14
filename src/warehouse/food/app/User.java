@@ -12,21 +12,29 @@ package warehouse.food.app;
 public class User {
 
     static String user = "";
-
+    static String phone;
     public User(String user) {
-        this.user = user;
+        this.phone = user;
     }
 
     public static String getUser() {
-        return user;
+        return phone;
     }
 
-    public static void setUser(String user) {
-        User.user = user;
+    public static void setUser(String phone) {
+        User.phone = phone;
     }
 
     User() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static String getPhone() {
+        return phone;
+    }
+
+    public static void setPhone(String phone) {
+        User.phone = phone;
     }
 
 }

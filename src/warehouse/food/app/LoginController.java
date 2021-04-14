@@ -57,6 +57,7 @@ public class LoginController implements Initializable {
         if (signin) {
             
             User user = new User(data.getUser(txtPhone.getText()));
+            User.setPhone(txtPhone.getText());
             Parent root = FXMLLoader.load(getClass().getResource("FXMFrame.fxml"));
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

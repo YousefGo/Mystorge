@@ -310,13 +310,13 @@ public class Database {
                 + " WHERE ID=" + ID + ";";
 
         st.executeUpdate(sql);
-        sql = "INSERT INTO STOCK(date,Operation,OperationQuantity,ItemID,Username) values" + "("
+        sql = "INSERT INTO STOCK(date,Operation,OperationQuantity,ItemID,phoneNumber) values" + "("
                 + "DATE()"
                 + ",'" + ops + "',"
                 + qyt
                 + ","
                 + ID + ","
-                + "'" + User.getUser() + "')";
+                + "'" + User.getPhone() + "')";
         st.executeUpdate(sql);
 
         st.close();
@@ -339,13 +339,13 @@ public class Database {
         st.executeUpdate(sql);
 
         st.executeUpdate(sql);
-        sql = "INSERT INTO STOCK(date,Operation,OperationQuantity,ItemID,Username) values" + "("
+        sql = "INSERT INTO STOCK(date,Operation,OperationQuantity,ItemID,phoneNumber) values" + "("
                 + "DATE()"
                 + ",'" + ops + "',"
                 + qyt
                 + ","
                 + ID + ","
-                + "'" + User.getUser() + "')";
+                + "'" + User.getPhone() + "')";
         st.executeUpdate(sql);
         st.close();
         con.close();
@@ -385,7 +385,7 @@ public class Database {
             double OperationQuantity = rs.getDouble("OperationQuantity");
             int ItemID = rs.getInt("ItemID");
 
-            String Username = rs.getString("Username");
+            String Username = rs.getString("phoneNumber");
 
             Report item = new Report(Date, Operation, OperationQuantity, ItemID, Username);
 
